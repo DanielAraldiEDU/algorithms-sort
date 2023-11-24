@@ -6,6 +6,8 @@
 #include "./helpers/validations.hpp"
 #include "./native/sort.hpp"
 #include "./native/time.hpp"
+#include "./sort/quick.hpp"
+#include "./sort/shell.hpp"
 
 using namespace std;
 
@@ -26,35 +28,21 @@ int main() {
   cout << endl;
 
   if (numberOfCases(cases)) {
-    int arrayGoodCase[length];
-    int arrayPoorCase[length];
+    int array[length];
 
     switch (cases) {
     case 2: {
-      generateGoodCase(arrayGoodCase, length);
-      generatePoorCase(arrayPoorCase, length);
+      quickSortGoodCases(array, repeats, length);
+      quickSortBadCases(array, repeats, length);
 
-      cout << "Good case => ";
-      getTime('Q', arrayGoodCase, repeats, length, 'M');
-
-      cout << "Bad case => ";
-      getTime('Q', arrayPoorCase, repeats, length, 'M');
+      shellSortGoodCases(array, repeats, length);
+      shellSortBadCases(array, repeats, length);
+  
+      cout << endl;
       break;
     }
+
     case 3: {
-      int arrayRandomCase[length];
-      generateGoodCase(arrayGoodCase, length);
-      generatePoorCase(arrayPoorCase, length);
-      generateRandomCase(arrayRandomCase, length);
-
-      cout << "Good case => ";
-      getTime('Q', arrayGoodCase, repeats, length, 'M');
-
-      cout << "Bad case => ";
-      getTime('Q', arrayPoorCase, repeats, length, 'M');
-
-      cout << "Random case => ";
-      getTime('Q', arrayRandomCase, repeats, length, 'M');
       break;
     }
     }

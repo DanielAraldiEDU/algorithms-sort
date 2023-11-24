@@ -40,5 +40,9 @@ int main() {
       quickSortRandomCases(array, repeats, length);
       shellSortRandomCases(array, repeats, length);
     }
+  } else {
+    cout << "Invalid number cases!" << endl;
   }
+
+  return 0;
 }

@@ -30,21 +30,15 @@ int main() {
   if (numberOfCases(cases)) {
     int array[length];
 
-    switch (cases) {
-    case 2: {
-      quickSortGoodCases(array, repeats, length);
-      quickSortBadCases(array, repeats, length);
+    quickSortGoodCases(array, repeats, length);
+    quickSortBadCases(array, repeats, length);
 
-      shellSortGoodCases(array, repeats, length);
-      shellSortBadCases(array, repeats, length);
-  
-      cout << endl;
-      break;
-    }
+    shellSortGoodCases(array, repeats, length);
+    shellSortBadCases(array, repeats, length);
 
-    case 3: {
-      break;
-    }
+    if(cases == 3){
+      quickSortRandomCases(array, repeats, length);
+      shellSortRandomCases(array, repeats, length);
     }
   }
 }

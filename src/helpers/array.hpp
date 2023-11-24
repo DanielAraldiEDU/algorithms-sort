@@ -1,4 +1,5 @@
 #include <iostream>
+#include <windows.h>
 
 using namespace std;
 
@@ -20,6 +21,12 @@ void generatePoorCase(int array[], int length) {
 }
 
 void generateRandomCase(int array[], int length) {
-  for (int index = 0; index < length; index++) 
+  for (int index = 0; index < length; index++)
     array[index] = fmod(rand(), length);
+}
+
+void copyValuesToAnotherArray(int arrayToCopy[], int array[], int length){
+  for(int index = 0; index < length; index++){
+    array[index] = arrayToCopy[index];
+  }
 }

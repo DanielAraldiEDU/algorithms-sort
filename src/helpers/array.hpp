@@ -25,8 +25,7 @@ void generateRandomCase(int array[], int length) {
     array[index] = fmod(rand(), length);
 }
 
-void copyValuesToAnotherArray(int arrayToCopy[], int array[], int length){
-  for(int index = 0; index < length; index++){
+void copyValuesToAnotherArray(int arrayToCopy[], int array[], int length) {
+  for (int index = 0; index < length; index++) 
     array[index] = arrayToCopy[index];
-  }
 }

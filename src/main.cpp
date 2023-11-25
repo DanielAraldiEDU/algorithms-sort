@@ -30,14 +30,14 @@ int main() {
   if (numberOfCases(cases)) {
     int array[length];
 
-    // quickSortGoodCases(array, repeats, length);
-    // quickSortBadCases(array, repeats, length);
+    quickSortGoodCases(array, repeats, length);
+    quickSortBadCases(array, repeats, length);
 
-    // shellSortGoodCases(array, repeats, length);
-    // shellSortBadCases(array, repeats, length);
+    shellSortGoodCases(array, repeats, length);
+    shellSortBadCases(array, repeats, length);
 
-    if(cases == 3){
-      generateRandomCase(array,length);
+    if (cases == 3) {
+      generateRandomCase(array, length);
       quickSortRandomCases(array, repeats, length);
       shellSortRandomCases(array, repeats, length);
     }

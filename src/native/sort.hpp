@@ -76,7 +76,7 @@ void handleSort(int array[], int increment, int index, int length) {
     j = index;
     isFound = false;
 
-    while(j < i && !isFound) {
+    while (j < i && !isFound) {
       if (array[i] < array[j]) isFound = true;
       else j = j + increment;
     }
@@ -93,10 +93,10 @@ void handleSort(int array[], int increment, int index, int length) {
   }
 }
 
-void handleShellSort(int array[], int length, char option = '4') {
+void handleShellSort(int array[], int length, char option = '4') {  
   const int group = chooseGroup();
   for (int index = group; index >= 0; index--) {
-    int increment = pow(group, index);
+    int increment = pow(2, index);
     for (int j = 0; j <= increment; j++) handleSort(array, increment, j, length);
   }
 }

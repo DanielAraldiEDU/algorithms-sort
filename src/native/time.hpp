@@ -19,10 +19,6 @@ void getTime(char type, int array[], int repeats, int length, char option, char 
 
     double time_taken = double(end - start) / double(CLOCKS_PER_SEC);
 
-    cout << "Ordered Array: ";
-    showArray(array, length);
-    cout << endl;
-
     allTime += time_taken;
   }
 

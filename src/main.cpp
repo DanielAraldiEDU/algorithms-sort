@@ -1,3 +1,10 @@
+/*
+
+Trabalho M3 - Ordenação.
+Estudades: Daniel Sansão Araldi e Rafael Mota Alves.
+
+*/
+
 #include <iostream>
 #include <math.h>
 #include <time.h>

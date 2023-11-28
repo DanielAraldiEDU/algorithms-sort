@@ -2,12 +2,28 @@
 
 using namespace std;
 
+void swap(int &firstValue, int &secondValue) {
+  int auxiliar = firstValue;
+  firstValue = secondValue;
+  secondValue = auxiliar;
+}
+
+int chooseMedianPart(int array[], int left, int right, int middle) {
+  if (array[left] > array[middle]) swap(array[left], array[middle]);
+  if (array[middle] > array[right]) {
+    swap(array[middle], array[right]);
+    if (array[left] > array[middle]) swap(array[left], array[middle]);
+  }
+  return middle;
+}
+
 int choosePivot(int array[], int left, int right, char option = 'M') {
   const int sidesSum = left + right;
+  const int middle = sidesSum / 2;
   switch(option) {
     // Middle
     case 'M': {
-      return array[sidesSum / 2];
+      return array[middle];
     }
     // First
     case 'F': {
@@ -19,10 +35,10 @@ int choosePivot(int array[], int left, int right, char option = 'M') {
     }
     // Median Part
     case 'P': {
-      return array[sidesSum / 3];
+      return array[chooseMedianPart(array, left, right, middle)];
     }
     default: {
-      return array[sidesSum / 2];
+      return array[middle];
     }
   }
 }
@@ -46,7 +62,7 @@ void handleQuickSort(int array[], int left, int right, char option = 'M') {
       auxiliarLeft++;
       auxiliarRight--;
     }
-  } while (left > right);
+  } while (auxiliarLeft <= auxiliarRight);
 
   if (left < auxiliarRight) handleQuickSort(array, left, auxiliarRight, option);
   if (right > auxiliarLeft) handleQuickSort(array, auxiliarLeft, right, option);

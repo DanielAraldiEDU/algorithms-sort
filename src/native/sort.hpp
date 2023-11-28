@@ -3,25 +3,26 @@
 using namespace std;
 
 int choosePivot(int array[], int left, int right, char option = 'M') {
+  const int sidesSum = left + right;
   switch(option) {
     // Middle
     case 'M': {
-      return array[(left + right) / 2];
+      return array[sidesSum / 2];
     }
     // First
     case 'F': {
-      return 0;
+      return array[left];
     }
     // Last
     case 'L': {
-      return sizeof(*array) / sizeof(int);
+      return array[right];
     }
     // Median Part
     case 'P': {
-      return array[(left + right) / 3];
+      return array[sidesSum / 3];
     }
     default: {
-      return array[(left + right) / 2];
+      return array[sidesSum / 2];
     }
   }
 }
@@ -47,8 +48,8 @@ void handleQuickSort(int array[], int left, int right, char option = 'M') {
     }
   } while (left > right);
 
-  if (left < auxiliarRight) handleQuickSort(array, left, auxiliarRight);
-  if (right > auxiliarLeft) handleQuickSort(array, auxiliarLeft, right);
+  if (left < auxiliarRight) handleQuickSort(array, left, auxiliarRight, option);
+  if (right > auxiliarLeft) handleQuickSort(array, auxiliarLeft, right, option);
 }
 
 int chooseGroup(char option = '4') {

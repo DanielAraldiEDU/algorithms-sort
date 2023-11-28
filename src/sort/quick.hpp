@@ -1,3 +1,5 @@
+#include <iostream>
+
 using namespace std;
 
 void quickSortGoodCases (int array[], int repeats, int length) {
@@ -14,7 +16,7 @@ void quickSortGoodCases (int array[], int repeats, int length) {
   cout << endl;
 
   cout << "Good case Quicksort Pivot(MEDIAN PART) => ";
-  getTime('Q', array, repeats, length, 'M', 'G');
+  getTime('Q', array, repeats, length, 'P', 'G');
   cout << endl;
 }
 
@@ -32,7 +34,7 @@ void quickSortBadCases(int array[], int repeats, int length) {
   cout << endl;
 
   cout << "Bad case Quicksort Pivot(MEDIAN PART) => ";
-  getTime('Q', array, repeats, length, 'M', 'B');
+  getTime('Q', array, repeats, length, 'P', 'B');
   cout << endl;
 }
 
@@ -50,6 +52,6 @@ void quickSortRandomCases(int array[], int repeats, int length) {
   cout << endl;
 
   cout << "Random case Quicksort Pivot(MEDIAN PART) => ";
-  getTime('Q', array, repeats, length, 'M', 'R');
+  getTime('Q', array, repeats, length, 'P', 'R');
   cout << endl;
 }
